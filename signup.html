@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./css/signin.css">
+   <link rel="stylesheet" href="../js/index.js">
+   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+   <link rel="stylesheet" href="localhost:8082/user/create">
+</head>
+<body>
+	<img class="wave" src="..//pic/login.png">
+	<div class="container">
+		<div class="img">
+			<img src="..//pic/j.png">
+		</div>
+		<div class="login-content">
+			<form action="localhost:8082/user/create" method="post">
+				<img src="..//pic/undraw_Female_avatar_efig.png">
+				<h2 class="title">Register Now</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<input type="text" class="input" required placeholder="username" id="username">
+           		   </div>
+           		</div>
+                   <div class="input-div email">
+                    <div class="i"> 
+                         <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                         <input type="email" class="input" required placeholder="email" id="email">
+                 </div>
+               </div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<input type="password" class="input" required placeholder=pPassword" id="password">
+            	   </div>
+		     	</div>
+                 <div class="input-div pass">
+                    <div class="i"> 
+                         <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                         <input type="password" class="input" required placeholder="Confirm Password">
+                 </div>
+               </div>
+				 <div class="checkbox">
+				 <label>
+				  <input type="checkbox" checked="checked" name="remember"> I agree to the tems and condition
+				</label>
+            	<input type="submit" class="btn" value="signup" >
+				<a href="..//html/signin.html"><p>Already have an account? Login!</p></a>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="..//js/signup.js"></script>
+</body>
+</html>

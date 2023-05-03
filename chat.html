@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Chatbot</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background-color: #f8f8f8;
+      }
+
+      #chat-window {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+        max-height: 300px;
+        overflow-y: scroll;
+      }
+
+      .user-message {
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin-bottom: 10px;
+        max-width: 70%;
+        align-self: flex-start;
+      }
+
+      .bot-message {
+        background-color: #0084ff;
+        color: #fff;
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin-bottom: 10px;
+        max-width: 70%;
+        align-self: flex-end;
+      }
+
+      #user-input {
+        padding: 5px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-right: 10px;
+        width: 70%;
+      }
+
+      button {
+        padding: 5px 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+        background-color: #0084ff;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chat-window"></div>
+    <input type="text" id="user-input" placeholder="Type your message...">
+    <button type="button" onclick="sendUserMessage()">Send</button>
+
+    <script>
+      function sendUserMessage() {
+        var userInput = document.getElementById("user-input").value;
+        addUserMessage(userInput);
+        sendChatMessage(userInput);
+        document.getElementById("user-input").value = "";
+      }
+
+      function addUserMessage(message) {
+        var chatWindow = document.getElementById("chat-window");
+        var userMessage = document.createElement("div");
+        userMessage.className = "user-message";
+        userMessage.textContent = message;
+        chatWindow.appendChild(userMessage);
+      }
+
+      function addBotMessage(message) {
+        var chatWindow = document.getElementById("chat-window");
+        var botMessage = document.createElement("div");
+        botMessage.className = "bot-message";
+        botMessage.textContent = message;
+        chatWindow.appendChild(botMessage);
+      }
+
+      function sendChatMessage(message) {
+        var botReply = generateBotReply(message);
+        addBotMessage(botReply);
+      }
+
+      function generateBotReply(userInput) {
+        // Replace this with your own code to generate a reply from the chatbot
+        var replies = [
+          "I'm sorry, I don't understand.",
+          "Can you please rephrase that?",
+          "I'm not sure what you mean.",
+          "I'm sorry, I can't help you with that.",
+          "Please ask me something else."
+        ];
+        return replies[Math.floor(Math.random() * replies.length)];
+      }
+    </script>
+  </body>
+</html>

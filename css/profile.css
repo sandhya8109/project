@@ -1,0 +1,131 @@
+@font-face{
+    font-family: "Roboto";
+    src:url(https://fonts.google.com/specimen/Roboto);
+    font-weight: 100;
+    font-style: bold;
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 8vh;
+        background-color: #fff;
+        color: #c33764;
+        font-size: 1.2rem;
+        position: fixed; /* Fix the position of the nav bar */
+      top: 0; /* Set the top position to 0 to make it stick to the top of the viewport */
+      width: 100%; /* Set the width to 100% to make the nav bar span the entire viewport */
+      z-index: 1000;
+        border-bottom: 1px solid #fff; /* Add a white border at the bottom of the nav bar */
+      }
+      .logo {
+        cursor: pointer;
+        width: 150px; /* Set the desired width */
+        height: 150px; /* Set the desired height */
+        margin-left: 1.5rem;
+      }
+      
+      .logo img {
+        width: 100%; /* Make the image fill the container */
+        height: 100%; /* Make the image fill the container */
+        object-fit: contain; /* Keep the aspect ratio of the image */
+      }
+      .nav-links {
+        display: flex;
+        justify-content: space-around;
+        width: 30%;
+        margin-right: 1.5rem;
+        font-weight:500;
+          }
+      
+      .nav-links li {
+        list-style: none;
+      }
+      
+      .nav-links a {
+        color: #c33764;
+        text-decoration: none;
+        letter-spacing: 1px;
+      }
+      
+      .burger {
+        display: none;
+        cursor: pointer;
+      }
+      
+      .burger div {
+        width: 25px;
+        height: 3px;
+        background-color: #c33764;
+        margin: 5px;
+        transition: all 0.3s ease;
+      }
+      
+      @media screen and (max-width: 1024px) {
+        .nav-links {
+          width: 60%;
+        }
+      }
+      
+      @media screen and (max-width: 768px) {
+        body {
+          overflow-x: hidden;
+        }
+        
+        .nav-links {
+          position: fixed;
+          right: 0;
+          height: 92vh;
+          top: 8vh;
+          background-color: #c33764;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 50%;
+          transform: translateX(100%);
+          transition: transform 0.5s ease-in;
+          
+        }
+        
+        .nav-links li {
+          opacity: 0;
+        }
+        
+        .burger {
+          display: block;
+        }
+      }
+      
+      .nav-active {
+        transform: translateX(0%);
+      }
+      
+      .line1 {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      
+      .line2 {
+        opacity: 0;
+      }
+      
+      .line3 {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+      
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.user-profile img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.user-profile span {
+  font-weight: bold;
+}

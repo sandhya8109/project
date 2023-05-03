@@ -1,0 +1,105 @@
+
+* {
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+	
+	font-family: "Josefin Sans", sans-serif;
+
+}
+.contact-bg{
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(../pic/menstruation-period-calendar-women-to-check-date-cycle-illustration-vector.jpg);
+    background-position: 50% 40%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact-bg h3{
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+.contact-bg h2{
+    font-size: 3rem;
+    text-transform: uppercase;
+    padding: 0.4rem 0;
+    letter-spacing: 4px;
+}
+
+  
+.container{
+	text-align:center;
+	background: #f5f5f5;
+}
+.header{
+	padding-top: 30px;
+	color:#c33764;
+	font-size: 20px;
+	margin: auto;
+	line-height: 50px;
+}
+.sb-container{
+	max-width: 1200px;
+	margin: auto;
+	padding: 30px 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.teams{
+	margin: 10px;
+	padding: 22px;
+	max-width: 30%;
+	cursor: pointer;
+	transition:0.4s;
+	box-sizing: border-box;
+	border: 1px solid #444;
+}
+.teams:hover{
+	background-color: #ddd;
+border-radius: 12px;
+}
+.teams img{
+	width: 200px;
+height: 200px;
+}
+.name{
+	padding: 12px;
+	font-weight: bold;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+.desig{
+	font-style: italic;
+	color: #c33764;
+}
+.about{
+	margin: 20px 0;
+	font-weight: lighter;
+	color: #4e4e4e;
+}
+.social-links{
+	margin: 14px;
+	}
+	.social-links a {
+		display: inline-block;
+		height:30px;
+		width: 30px;
+		transition: .4s;
+	}
+	.social-links a:hover {
+transform: scale(1.5);
+	}
+	.social-links a i{
+color:#c33764;
+	}		 
+	@media screen and (max-width: 600px){
+		.teams{
+			max-width: 100%;
+		}
+	}

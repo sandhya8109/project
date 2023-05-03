@@ -1,0 +1,30 @@
+/* Override Vue Datepicker CSS */
+
+.vdp-datepicker__calendar {
+    width: 100% !important;
+}
+.vdp-datepicker__calendar .cell.selected {
+    background: #00d2b2 !important;
+    color: #fff;
+    font-weight: bold;
+}
+.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).day:hover, .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).month:hover, .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).year:hover {
+    border: 1px solid #00d2b2 !important;
+}
+.vdp-datepicker__calendar .cell.selected:hover {
+    background: #00d2b2 !important;
+}
+.select {
+  margin-bottom: 1em;
+}
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  transition: opacity 1.5s;
+}
+.fade-leave {
+  opacity: 0;
+}
+.fade-leave-active {
+}

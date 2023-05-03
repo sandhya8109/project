@@ -1,0 +1,131 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+
+/* Design */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #F3F5F6;
+}
+
+body {
+  color: #272727;
+  font-family: Lato, 'sans-serif';
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding: 1rem;
+}
+.inner{
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+  color: #c33764;
+}
+
+.border{
+  width: 160px;
+  height: 5px;
+  background: #c33464;
+  margin: 26px auto;
+}
+
+.main{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.btn {
+  color: #ffffff;
+  padding: 0.8rem;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-weight: 700;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid #c33764;
+  background: #c33764;
+  box-shadow: 0px 2px 4px rgba(126, 87, 30, 0.5);
+}
+
+.btn:hover {
+  background-color: #c33764;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 50%;
+}
+
+.cards_item {
+  display: flex;
+  padding: 0.7rem;
+  margin: auto;
+  min-width: 270px;
+}
+
+@media (min-width: 40rem) {
+  .cards_item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 56rem) {
+  .cards_item {
+    width: 33.3333%;
+  }
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.25rem;
+  border: 1px solid #E7E7E7;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card_content {
+  padding: 1rem;
+}
+
+.card_title {
+  color: black;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: capitalize;
+  margin: 0px;
+}
+
+.card_text {
+  color: gray;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;    
+  font-weight: 400;
+}
+.card-item a{
+  color: yellow;
+}
+@media screen and (max-width: 600px){
+  .main{
+    max-width: 100%;
+  }
+}

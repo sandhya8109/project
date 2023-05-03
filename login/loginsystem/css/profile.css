@@ -1,0 +1,275 @@
+// Var
+$font:          'Roboto', sans-serif;
+$bg:            #37404a;
+$white:         #FFF;
+$grey:          #333;
+$rose:          #E87E91;
+$blue-light:    #73bec8;
+$blue-lighter:  #ABDAD3;
+$green:         #85FFC7;
+$red:           #EF5350;
+
+// Margin & Padding
+.m-b-xs {
+  margin-bottom: 2%;
+}
+.m-b-md {
+  margin-bottom: 10%;
+}
+.m-t-xs {
+  margin-top: 2%;
+}
+.m-t-sm {
+  margin-top: 5%;
+}
+
+// General
+* {
+  outline: 0 !important;
+}
+
+body {
+  padding: 2% 0;
+  background-color: $bg;
+}
+
+h1 {
+  font-family: $font;
+  font-size: 2.2em;
+  font-weight: 300;
+  color: $green;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: $font;
+  font-size: 1.1em;
+  font-weight: 300;
+  color: $white;
+}
+
+a {
+  color: $white;
+
+  &:hover {
+    text-decoration: none;
+    color: $white;
+  }
+}
+
+#survey-form {
+		label,
+	.labels {
+			display: block;
+			margin-bottom: 2%;
+			font-family: $font;
+			font-size: 1.1em;
+			font-weight: 300;
+			color: $white;
+			letter-spacing: 0.5px;
+	}
+
+	input::-webkit-input-placeholder {
+			color: transparent !important;
+	}
+	input::-moz-placeholder {
+			color: transparent !important;
+	}
+	input:-ms-input-placeholder {
+			color: transparent !important;
+	}
+	input:-moz-placeholder {
+			color: transparent !important;
+	}
+
+	input,
+	select {
+			display: block;
+			width: 100%;
+			overflow: hidden;
+			outline: none;
+			border: 2px solid $grey;
+	}
+
+	input {
+			margin-top: 1.5%;
+			padding: 0 0 5px 0;
+			background: transparent;
+			border: none;
+			outline: none;
+			border-bottom: 2px solid $white;
+			font-size: 1.1em;
+			font-weight: 300;
+			color: $green;
+
+			&:focus {
+					border-color: $green;
+			}
+	}
+
+	[type="checkbox"],
+	[type="radio"] {
+			display: inline-block;
+			width: auto;
+			margin: 0px 10px 0 0;
+	}
+
+	[type="checkbox"],
+	[type="radio"]{
+			display: inline-block;
+			margin: 0 10px 0 0 !important;
+			position: relative;
+			top: 5px;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			-ms-appearance: none;
+			-o-appearance: none;
+			appearance: none;
+			height: 23px;
+			width: 23px;
+			transition: all 0.15s ease-out 0s;
+			background: $bg;
+			color: $white;
+			cursor: pointer;
+			outline: none;
+			z-index: 1000;
+			border: 1px solid #FFF;
+
+			&:hover {
+					border-color: $green;
+			}
+			&:checked {
+					&:before {
+							display: inline-block;
+							height: 21px;
+							width: 21px;
+							position: relative;
+							left: 0;
+							bottom: 0;
+							content: "\e014";
+							text-align: center;
+							font-family: 'Glyphicons Halflings';
+							line-height: 20px;
+							font-size: 15px;
+							color: $green;
+					}
+			}
+			&:focus {
+					outline: none;
+					border-color: $white;
+			}
+	}
+
+	[type="radio"] {
+			border-radius: 50%;
+
+			&:after {
+					border-radius: 50%;
+			}
+	}
+
+	[type=number] {
+			width: 45px;
+
+			&::-webkit-inner-spin-button,
+			&::-webkit-outer-spin-button {
+					-webkit-appearance: none;
+					-moz-appearance: none;
+					appearance: none;
+					margin: 0;
+			}
+	}
+
+	select {
+			height: 40px;
+			padding-left: 5px;
+			background-color: $bg;
+			border: 2px solid $white;
+			color: $green;
+
+			& option {
+					padding: 5px 10px;
+					font-weight: 300;
+					cursor: pointer;
+
+					&:hover {
+							background-color: $green;
+					}
+			}
+	}
+
+	textarea {
+			resize: none;
+			margin-top: 2%;
+			padding: 10px 10px 0px 20px;
+			width: 100%;
+			height: 90px;
+			color: $green;
+			background-color: $bg;
+			border: 2px solid $white;
+	}
+
+	.btn {
+			display: inline-block;
+			position: relative;
+			width: 100%;
+			margin: 3% 0 0 0;
+			height: 45px;
+			text-transform: uppercase;
+			text-decoration: none;
+			cursor: pointer;
+			border: 3px solid #85FFC7;
+			border-radius: 0;
+			font-weight: 500;
+			font-size: 1.2em;
+			color: $green;
+			text-align: center;
+			background: none;
+			transition: color 0.25s ease;
+
+			&:after {
+					position: absolute;
+					content: '';
+					top:0;
+					left: 0;
+					width: 0;
+					height: 100%;
+					background-color: $green;
+					transform-origin:left;
+					transition: width 0.5s ease;
+					z-index:-1;
+			}
+			&:hover {
+					color: $bg;
+
+					&:after {
+							width: 100%;
+					}
+			}
+	}
+
+	fieldset {
+			margin: 5% 0 0 0;
+	}
+}
+
+
+.copyright {
+  text-align: center;
+  font-size: 10px;
+  color: $white;
+
+  & i {
+    color: $red;
+  }
+}
+
+// Responsive
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 8% 0;
+  }
+}
