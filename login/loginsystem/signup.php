@@ -8,37 +8,6 @@ error_reporting(E_ALL);
 require_once('includes/config.php');
 
 
-function sendMail($email,$code)
-{
- require  ("vendor/phpmailer/phpmailer/src/PHPMailer.php");
- require  ("vendor/phpmailer/phpmailer/src/SMTP.php");
- require  ("vendor/phpmailer/phpmailer/src/Exception.php");
- $mail = new PHPMailer(true);
- try {
-    $mail->SMTPDebug = 0;   
-    $mail->isSMTP();                                           
-    $mail->Host       = 'smtp.gmail.com';                     
-    $mail->SMTPAuth   = true;                                  
-    $mail->Username   = 'chelibeti7@gmail.com';                    
-    $mail->Password   = 'zwkddebtffpazmlq';                              
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
-    $mail->Port       = 465;                                   
-
-   
-    $mail->setFrom('chelibeti7@gmail.com', 'CHELI-BETI');
-    $mail->addAddress($email);
-
-
-    $mail->isHTML(true);                                 
-    $mail->Subject = 'email varification from CHELI-BETI';
-    $mail->Body    = 'Here is the verification link <b><a href="http://localhost:8081/project/login/loginsystem/login.php?verification='.$code.'">http://localhost:8081/project/login/loginsystem/login.php?verification='.$code.'</a></b>';
-
-    $mail->send();
-    echo "<script>alert('We have send a verification link on your $email');</script>";
-} catch (Exception $e) {
-    echo "<script>alert('Message could not be sent. Mailer Error: {$mail->ErrorInfo}');</script>";
-}
-}
 //Code for Registration 
 if(isset($_POST['submit']))
 {
