@@ -54,11 +54,14 @@ if (strlen($_SESSION['id'] == 0)) {
     while ($row = mysqli_fetch_assoc($result)) {
       $userId = $row['user_id'];
 
-      $nextPeriodDate = $row['next_period_date'];
+
+      $previousPeriodDate = $_POST["previous_period_date"];
+      $cycleLength = $_POST["cycle_length"];
+      $periodLength = $_POST["period_length"];
+      $totalLength = $cycleLength + $periodLength;
 
       // Calculate next_period_date after completing recent period date
-      $nextPeriodDate = date("Y-m-d", strtotime($nextPeriodDate . " +1 month"));
-      $nextPeriodDate = date("Y-m-d", strtotime($nextPeriodDate . " +1 day"));
+      $nextPeriodDate = date("Y-m-d", strtotime($previousPeriodDate . " + " . $totalLength . " days"));
 
       // Update next_period_date in the database
       $updateSql = "UPDATE menstrual_cycle_tracker SET next_period_date = '$nextPeriodDate' WHERE user_id = $userId";
@@ -68,8 +71,6 @@ if (strlen($_SESSION['id'] == 0)) {
         echo "Error updating next_period_date for user with ID $userId: " . mysqli_error($conn) . "<br>";
       }
     }
-  } else {
-    echo "No users found whose period_date has passed.";
   }
 
 
@@ -117,7 +118,7 @@ if (strlen($_SESSION['id'] == 0)) {
             <div class="qr-container">
               <?php
               $user_id = $_SESSION['id'];
-              $qr_data = 'https://example.com/user/' . $user_id;
+              $qr_data = 'http://localhost:8081/project/login/loginsystem/welcome.php?' . $user_id;
               $qr_code = 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=' . urlencode($qr_data);
 
               // display QR code
@@ -130,23 +131,7 @@ if (strlen($_SESSION['id'] == 0)) {
               // form has not been submitted, display the form
               ?>
               <!-- your HTML form code goes here -->
-              <section id="form-section">
 
-                <h1>Menstrual Cycle Tracker</h1>
-                <form method="post" action="process_form.php">
-                  <label for="last_period_date">Date of last period:</label>
-                  <input type="date" name="last_period_date" id="last_period_date" required><br>
-
-                  <label for="cycle_length">Average menstrual cycle length (in days):</label>
-                  <input type="number" name="cycle_length" id="cycle_length" min="1" required><br>
-
-                  <label for="period_length">Average period length (in days):</label>
-                  <input type="number" name="period_length" id="period_length" min="1" required><br>
-
-                  <input type="submit" value="Save and predict next period">
-                </form>
-
-              </section>
 
 
               <?php

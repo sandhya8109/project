@@ -3,14 +3,12 @@ session_start();
 require_once('includes/config.php');
 if (isset($_SESSION['id'])) {
   if (mysqli_num_rows(mysqli_query($con, "SELECT * FROM menstrual_cycle_tracker WHERE user_id='{$_SESSION['id']}'")) > 0) {
-    header("Location:process_form.php");
+    header("Location:welcome.php");
   } else {
     header("Location:process_form.php");
   }
   exit();
 }
-
-
 if (isset($_GET['verification'])) {
   if (mysqli_num_rows(mysqli_query($con, "SELECT  id,fname FROM users WHERE code='{$_GET['verification']}'")) > 0) {
     $query = mysqli_query($con, "UPDATE users SET code='' WHERE code='{$_GET['verification']}'");
@@ -40,7 +38,15 @@ if (isset($_POST['login'])) {
       $_SESSION["loggedin"] = true;
       $_SESSION['SESSION_EMAIL'] = $email;
       // Redirect to the home page
-      header("Location: index1.php");
+      if (isset($_SESSION['id'])) {
+        if (mysqli_num_rows(mysqli_query($con, "SELECT * FROM menstrual_cycle_tracker WHERE user_id='{$_SESSION['id']}'")) > 0) {
+          header("Location:welcome.php");
+        } else {
+          header("Location:process_form.php");
+        }
+        exit();
+      }
+      header("Location: welcome.php");
       exit();
     } else {
       echo "<script>alert('First verify your account and try again.');</script>";
